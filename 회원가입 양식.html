@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>회원가입</title>
+</head>
+<body>
+    <header>
+        <h1>코딩 마스터 회원가입</h1>
+    </header>
+    <hr>
+    <main>
+        <form>
+            <fieldset>
+                <legend>필수 입력 사항</legend>
+                <labe for="name">이 름</labe>
+                <input type="text" name="name" id="name" placeholder="이름을 입력하세요.">
+                <br>
+                <labe for="id">아이디</labe>
+                <input type="text" name="id" id="id" placeholder="영문 및 숫자만 활용.">
+                <button>중복 확인하기</button>
+                <br>
+                <labe for="pw">비밀번호</labe>
+                <input type="text" name="pw" id="pw" placeholder="영문 대소문자, 숫자만 활용.">
+                <br>
+                <labe for="email">이메일</labe>
+                <input type="email" name="email" id="email">
+            </fieldset>
+
+            <fieldset>
+                <legend>선택 입력 사항</legend>
+
+                <p>1. 성별</p>
+                <input type="radio" id="male" name="sex">
+                <label for="male">남성</label>
+                <input type="radio" id="female" name="sex">
+                <label for="female">여성</label>
+                <input type="radio" id="none" name="sex">
+                <label for="none">기타</label>
+
+                <p>2. 거주 지역</p>
+                <input type="radio" id="seoul" name="city">
+                <label for="seoul">서울</label>
+                <input type="radio" id="kyounggi" name="city">
+                <label for="kyounggi">경기</label>
+                <input type="radio" id="jeonju" name="city">
+                <label for="jeonju">전주</label>
+                <input type="radio" id="other" name="city">
+                <label for="other">그 외</label>
+
+
+                <p>3. 취미</p>
+                <input type="checkbox" id="login" name="hobby">
+                <label for="watching">OTT 시청</label>
+                <input type="checkbox" id="design" name="hobby">
+                <label for="sport">운동</label>
+                <input type="checkbox" id="text" name="hobby">
+                <label for="book">독서</label>
+                <input type="checkbox" id="opperate" name="hobby">
+                <label for="clean">청소</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>회원 가입 동기</legend>
+                <textarea rows="3" cols="30" name="comment">
+                </textarea>
+
+
+            </fieldset>
+
+        </form>
+    </main>
+    <hr>
+    <footer>            
+        <input type="submit">
+    </footer>
+</body>
+</html>
