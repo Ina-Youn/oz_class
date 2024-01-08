@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>박스로 간단하게 꾸미기</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                text-align: center;
+                background: linear-gradient(45deg, #c38cb5,#73bbe8);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+            .area {
+                width: 150px;
+                height: 50px;
+            }
+            .button {
+                border: 5px solid skyblue;
+                border-radius: 10px;
+                background-color: white;
+                position: absolute;
+                top: 50%;
+                margin: -25px 0 0 -25px;
+            }
+            p {
+                color: skyblue;
+                font-size: 20px;
+                line-height: 50px;
+                text-align: center;
+            
+            }
+        </style>
+    </head>
+    <body>
+        <p class="area button">
+            <strong>Hello, OZ!</strong>
+        </p>
+    </body>
+</html>
