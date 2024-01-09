@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    background-color: bisque;
+}
+
+.sidebar {
+    float: left;
+    color: green;
+    text-align: center;
+}
+
+.welcome{
+    float: left;
+    color: black;
+    text-align: conter;
+}
