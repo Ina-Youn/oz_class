@@ -1,0 +1,28 @@
+*{
+    text-align: center;
+}
+
+html{
+    background-color: rgb(233, 223, 147);
+    font-size: 16px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+body{
+    width: 640px;
+    margin: auto;
+}
+
+h1{
+    font-size: 48px;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+
+p{
+    font-size: 1rem;
+}
