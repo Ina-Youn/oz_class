@@ -1,0 +1,69 @@
+.chat-screen__texts{
+    padding: 0;
+    list-style-type: none;
+}
+
+.chat-screen__answers{
+    padding: 0 0 0 65%;
+    list-style-type: none;
+}
+.chat-screen__texts > .text{
+    background-color: yellow;
+    width: 280px;
+    height: 50px;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    line-height: 30px;
+    position: relative;
+    left: 20px;
+}
+.chat-screen__answers> .text{
+    background-color: rgb(185, 223, 192);
+    width: 280px;
+    height: 50px;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    line-height: 30px;
+    position: relative;
+    right: 20px;
+}
+.chat-screen__texts > .text::after{
+    content: "";
+    border-right: 16px solid yellow;
+    border-bottom: 16px solid transparent;
+    position: absolute;
+    top: 10px;
+    left: -10px;
+}
+
+.chat-screen__answers > .text::after{
+    content: "";
+    border-left: 16px solid rgb(185, 223, 192);
+    border-bottom: 16px solid transparent;
+    position: absolute;
+    top: 10px;
+    right: -10px;
+}
+
+
+.chat-screen__texts > .text:hover{
+    background-color: rgb(255, 213, 0);
+    transition: background-color 1.5s 0.2s ease-in;
+}
+
+.chat-screen__texts > .text:hover::after{
+    border-right: 16px solid rgb(255, 213, 0);
+    transition: border-right 1.5s 0.2s ease-in;
+}
+
+.chat-screen__answers > .text:hover{
+    background-color:  rgb(134, 206, 147);
+    transition: background-color 1.5s 0.2s ease-in;
+}
+
+.chat-screen__answers > .text:hover::after{
+    border-left: 16px solid rgb(134, 206, 147);
+    transition: border-left 1.5s 0.2s ease-in;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>채팅방 만들기</title>
+    <link href="chat.css" rel="stylesheet">
+    <link href="text.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <main class="chat-screen">
+            <section class="chat-screen_bar">
+                <div class="user">
+                    <div class="user_column">
+                        <div class="user_pic">
+                        </div>
+                    </div>
+                    <div class="user_column">
+                        <p class="user_nick">친구</p>
+                        <p class="user_count">상태 메세지: 오늘도 즐거운 하루^^</p>
+                    </div>
+                </div>
+            </section>
+            <ul class="chat-screen__texts">
+                <li class="text">친구야 오랜만이다</li>
+                <li class="text">잘 지내고 있니?</li>
+            </ul>
+            <ul class="chat-screen__answers">
+                <li class="text">와 진짜 오랜만이다</li>
+                <li class="text">어쩐 일이야?</li>
+                <li class="text">경조사? 보험? 보증?</li>
+            </ul>
+            <ul class="chat-screen__texts">
+                <li class="text">아니 너 생일이라서...</li>
+            </ul>
+            <ul class="chat-screen__answers">
+                <li class="text">아...</li>
+                <li class="text">오늘이 내 생일이야???</li>
+            </ul>
+            <ul class="chat-screen__texts">
+                <li class="text">곰돌이 아니세요?</li>
+            </ul>
+            <ul class="chat-screen__answers">
+                <li class="text">아닌데요</li>
+                <li class="text">뚱이 인데요</li>
+            </ul>
+            <ul class="chat-screen__texts">
+                <li class="text">연락처가 바뀐 것 같네요 죄송합니다.</li>
+            </ul>
+        </main>
+        <form class="chat-form">
+            <section class="chat-form_field">
+                <textarea class="chat-form_msg" placeholder="메세지를 입력하세요."></textarea>
+                <input type="subit" value="전송" class="chat-form_bt">
+            </section>
+        </form>
+    </div>
+</body>
+</html>
