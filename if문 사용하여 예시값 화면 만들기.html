@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문_성적표</title>
+</head>
+<body>
+    <script>
+        const point = parseInt(prompt("중간고사 점수를 입력하세요"))
+        if(point >= 90){
+            document.write (`나의 기말고사 점수는 ${point}점, 학점은 A!!!`)
+        }else if(point >= 80){
+            document.write (`나의 기말고사 점수는 ${point}점, 학점은 B!!!`)
+        }else if(point >= 70){
+            document.write (`나의 기말고사 점수는 ${point}점, 학점은 C!!!`)
+        }else if(point >= 60){
+            document.write (`나의 기말고사 점수는 ${point}점, 학점은 D!!!`)
+        }else{
+            document.write (`나의 기말고사 점수는 ${point}점, 학점은 F!!!`)
+        }
+        
+    </script>
+</body>
+</html>
