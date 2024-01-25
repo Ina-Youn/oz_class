@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Admin Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-3">
+        <h3 class="mt-5 mb-3 date" id="now">신규 등록 상품</h3>
+        <form class="row row-cols-lg-auto g-3 align-items-center">      
+            <div class="col-auto">
+              <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+              <select class="form-select" id="inlineFormSelectPref">
+                <!-- 카테고리 셀렉트 코드를 넣어주세요-->
+                    <option selected disabled>카테고리</option>
+                    <option value="1">상의</option>
+                    <option value="2">하의</option>
+                    <option value="3">신발</option>
+                    <option value="4">패션잡화</option>
+              </select>
+            </div>
+            <div class="col-auto">
+              <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected disabled>구매자 성별</option>
+              <option value="1">남성</option>
+              <option value="2">여성</option>
+            </select>
+          </div>
+            <div class="col-sm">
+                <!-- input 입력창 코드를 넣어주세요 -->
+                    <div class="col-auto">
+                      <label class="visually-hidden" for="autoSizingInput">Name</label>
+                      <input type="text" class="form-control" id="autoSizingInput" placeholder="제품명을 입력해주세요">
+                    </div>
+
+              </div>
+              <div class="col-auto">
+                <!-- 조회버튼 코드를 넣어주세요 -->
+                    <button type="submit" class="btn btn-primary">조회</button> 
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <button class="btn btn-danger" type="button">선택 항목 삭제</button>
+                </div>
+              
+          </form>
+         
+          <div class="container mt-3">
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col"><input type="checkbox" name="" id="chkRowAll"></th>
+                        <th scope="col">카테고리</th>
+                        <th scope="col">브랜드</th>
+                        <th scope="col">상품명</th>
+                        <th scope="col">성별</th>
+                        <th scope="col">가격</th>
+                      </tr>
+                <!-- 열의 속성값을 나타내는 코드를 작성해주세요 (예 : 카테고리, 브랜드, 상품명, 가격) -->
+            </thead>
+            <tbody class="table-group-divider" id="data-table">
+                <!-- 추후 크롤링한 데이터가 들어가는 자리 -->
+            </tbody>
+        </table>
+    </div>
+    <a href="https://github.com/Ina-Youn/oz_class" target="_blank"><img width=30px; src="github.svg" alt="깃허브아이콘">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    <!-- 페이지 네이션 코드를 넣어주세요 -->
+   <script>
+      // 크롤링한 데이터를 아래와 같은 형태의 객체 배열로 가정합니다.
+      // 추후 데이터베이스에 있는 데이터를 쿼리문으로 불러 올 수 있게 쿼리르 작성해 볼 수 있음
+      const data = [
+        { category: "상의", brand: 'Supreme', product: '슈프림 박스로고 후드티', gender: '여성', price: '390,000' },
+        { category: "하의", brand: 'DIESEL', product: '디젤 트랙 팬츠', gender: '여성', price: '188,000' },
+        { category: "신발", brand: 'Nike', product: '에어포스 1', gender: '남성', price: '137,000' },
+        { category: "패션잡화", brand: 'Music&Goods', product: '빵빵이 키링', gender: '여성', price: '29,000' },
+        // ...
+      ];
+      
+      const dataTable = document.getElementById('data-table');
+      
+      data.forEach((item, index) => {
+          const row = dataTable.insertRow();
+          const checkboxCell =row.insertCell(0);
+          const checkbox = document.createElement('input');
+          checkbox.type ='checkbox';
+          checkbox.id = 'checkbox' + index;
+          checkboxCell.appendChild(checkbox);
+
+          row.insertCell(1).innerHTML = item.category;
+          row.insertCell(2).innerHTML = item.brand;
+          row.insertCell(3).innerHTML = item.product;
+          row.insertCell(4).innerHTML = item.gender;
+          row.insertCell(5).innerHTML = item.price;
+      });
+
+      const h3 = document.getElementById("now")
+
+      const now = new Date()
+
+      let year = now.getFullYear()
+      let month = now.getMonth() + 1
+      let day = now.getDate()
+
+      h3.textContent = `신규 등록 상품 (${year}-${month}-${day})`
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
