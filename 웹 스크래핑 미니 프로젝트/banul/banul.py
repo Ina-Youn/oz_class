@@ -39,51 +39,55 @@ time.sleep(3)
 driver.find_element(By.LINK_TEXT, "실").click()
 time.sleep(0.5)
 
-html = driver.page_source
-soup = BeautifulSoup(html, "html.parser")
+# 1~4페이지 까지 제품 정보 스크래핑
+for i in range(1,5):
+    url = f'https://www.banul.co.kr/shop/shopbrand.html?type=Y&xcode=107&sort=&page={i}'
+    driver.get(url)
+    html = driver.page_source
+    soup = BeautifulSoup(html, "html.parser")
 
-items = soup.select(".item-list > .info")
+    items = soup.select(".item-list > .info")
+    product_list = []
 
-product_list = []
-for i in items:
-    product = i.select_one(".pr_name").text
-    price = i.select_one(".pr_price > strong").text
-    review = str(str(i.select_one(".pr_review")).split(' : ')[-1]).split('<')[0]
-    if review == None:
-        review = 0
+    
+    for i in items:
+        product = i.select_one(".pr_name").text
+        price = i.select_one(".pr_price > strong").text
+        review = str(str(i.select_one(".pr_review")).split(' : ')[-1]).split('<')[0]
+        if review == None:
+            review = 0
 
-    print(f"제품 명: {product}")
-    print(f"금액: {price}")
-    print(f"리뷰 수: {review}")
-    print()
+        print(f"제품 명: {product}")
+        print(f"금액: {price}")
+        print(f"리뷰 수: {review}")
+        print()
 
 driver.quit()
 
-# item = [product, price, review]
-# product_list.append(item)
+item = [product, price, review]
+product_list.append(item)
 
 
 
-# import pymysql
-# 
-# connection = pymysql.connect(
-#     host = '127.0.0.1',
-#     user = 'root',
-#     password = '123456789',
-#     db = 'banul',
-#     charset = 'utf8mb4'
-# )
-# 
-# connection.cursor()
-# 
-# def execute_query(connection, query, args=None):
-#     with connection.cursor() as cursor:
-#         cursor.execute(query, args or())
-#         if query.strip().upper().startswith('SELECT'):
-#             return cursor.fetchall()
-#         else:
-#             connection.commit()
-# 
-# for i in product_list:
-#     execute_query(connection, "INSERT INTO kream (product, price, review) VALUES (%s, %s, %s, %s)", (i[0],i[1],i[2]))
-# 
+import pymysql
+
+connection = pymysql.connect(
+    host = '127.0.0.1',
+    user = 'root',
+    password = '123456789',
+    db = 'banul',
+    charset = 'utf8mb4'
+)
+
+connection.cursor()
+
+def execute_query(connection, query, args=None):
+    with connection.cursor() as cursor:
+        cursor.execute(query, args or())
+        if query.strip().upper().startswith('SELECT'):
+            return cursor.fetchall()
+        else:
+            connection.commit()
+
+for i in product_list:
+    execute_query(connection, "INSERT INTO kream (product, price, review) VALUES (%s, %s, %s, %s)", (i[0],i[1],i[2]))
