@@ -30,12 +30,13 @@
      # 2차 수정 코드
      review = str(str(i.select_one(".pr_review")).split(' : ')[-1]).split('<')[0]
      ```
-     <img width="625" alt="코드 2차 수정" src="https://github.com/Ina-Youn/oz_class/assets/155051602/482a0443-63c6-4331-a509-44fd6c58e14d">
+     <img width="625" alt="코드 2차 수정" src="https://github.com/Ina-Youn/oz_class/assets/155051602/482a0443-63c6-4331-a509-44fd6c58e14d">    
+     
+  - 1~4페이지 까지의 제품명, 금액, 리뷰 정보를 print로 불러오는데는 성공했으나, SQL 데이터 저장에는 실패...
 
 <br>
 
 3. 이후 계획
-  - 해당 웹페이지는 페이지네이션이 작용중이기에, 제품 전체 스크래핑을 위해 다음 페이지로 자동으로 넘어가는 코드 구성 필요
   - SQL 데이터 연동
   - TBA
   - TBA
