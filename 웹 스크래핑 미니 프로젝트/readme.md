@@ -33,10 +33,10 @@
 
 1. 작업 내용
   - 크림 크롤링 코드를 통해 데이터 크롤링 완료.  
-  - MY SQL에 db 추가 및 연결을 통해 크롤링 한 데이터 저장 완료.
+  - MY SQL에 db 추가 및 연결을 통해 크롤링 한 데이터 저장 완료.  
     <img width="532" alt="스크린샷 2024-02-08 오전 10 26 38" src="https://github.com/Ina-Youn/oz_class/assets/155051602/f389279b-f0cc-4318-8ff6-b99e8980c7b9">
 
-  - 플라스크를 통해 admin페이지에 SQL 데이터 연동
+  - 플라스크를 통해 admin페이지에 SQL 데이터 연동  
     ![45279284-92ED-4C76-85EB-BFFE88184CD2](https://github.com/Ina-Youn/oz_class/assets/155051602/b3d4fc86-a0d3-481d-a5d3-cce3900e767a)
 
 
