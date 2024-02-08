@@ -45,11 +45,11 @@ for i in range(1,5):
     driver.get(url)
     html = driver.page_source
     soup = BeautifulSoup(html, "html.parser")
+    time.sleep(5)
 
     items = soup.select(".item-list > .info")
-    product_list = []
 
-    
+    product_list = []
     for i in items:
         product = i.select_one(".pr_name").text
         price = i.select_one(".pr_price > strong").text
@@ -57,17 +57,10 @@ for i in range(1,5):
         if review == None:
             review = 0
 
-        print(f"제품 명: {product}")
-        print(f"금액: {price}")
-        print(f"리뷰 수: {review}")
-        print()
-
-driver.quit()
-
 item = [product, price, review]
 product_list.append(item)
 
-
+driver.quit()
 
 import pymysql
 
@@ -90,4 +83,4 @@ def execute_query(connection, query, args=None):
             connection.commit()
 
 for i in product_list:
-    execute_query(connection, "INSERT INTO kream (product, price, review) VALUES (%s, %s, %s, %s)", (i[0],i[1],i[2]))
+    execute_query(connection, "INSERT INTO banul (product, price, review) VALUES (%s, %s, %s)", (i[0],i[1],i[2]))
