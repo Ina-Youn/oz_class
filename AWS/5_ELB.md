@@ -8,7 +8,11 @@
 
 3. ALB 생성하기 (EC2 인스턴스와 같은 리전)
     - 대상 그룹도 함께 생성하고 EC2 인스턴스를 대상 그룹에 포함시키기
+<img width="908" alt="스크린샷 2024-02-19 오후 5 08 12" src="https://github.com/Ina-Youn/oz_class/assets/155051602/810617ee-423e-409d-8171-8b844c441844">
 
 4. ALB의 주소를 통해 EC2 인스턴스에 접속하기
+<img width="262" alt="스크린샷 2024-02-19 오후 5 13 17" src="https://github.com/Ina-Youn/oz_class/assets/155051602/00aaab7b-99a9-454f-95fa-7ad89d379132">
+
+<img width="856" alt="스크린샷 2024-02-19 오후 5 13 27" src="https://github.com/Ina-Youn/oz_class/assets/155051602/fabc6c24-d9d0-47e7-9734-eb077939db38">
 
 5. EC2 인스턴스 종료하기
