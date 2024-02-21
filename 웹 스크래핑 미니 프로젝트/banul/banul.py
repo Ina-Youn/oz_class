@@ -31,15 +31,17 @@ url = "https://www.banul.co.kr/"
 driver.get(url)
 time.sleep(0.5)
 
-# 팝업창 닫기 버튼 클릭
-driver.find_element(By.CSS_SELECTOR, ".btn-close").click()
-time.sleep(3)
+#  팝업창 닫기 버튼 클릭
+# driver.find_element(By.CSS_SELECTOR, ".btn-close").click()
+# time.sleep(3)
 
 # 상단 카테고리 중 '실' 버튼 선택
 driver.find_element(By.LINK_TEXT, "실").click()
 time.sleep(0.5)
 
 # 1~4페이지 까지 제품 정보 스크래핑
+
+product_list = []
 for i in range(1,5):
     url = f'https://www.banul.co.kr/shop/shopbrand.html?type=Y&xcode=107&sort=&page={i}'
     driver.get(url)
@@ -48,17 +50,18 @@ for i in range(1,5):
     time.sleep(5)
 
     items = soup.select(".item-list > .info")
-
-    product_list = []
+    
     for i in items:
+
         product = i.select_one(".pr_name").text
         price = i.select_one(".pr_price > strong").text
         review = str(str(i.select_one(".pr_review")).split(' : ')[-1]).split('<')[0]
         if review == None:
             review = 0
 
-item = [product, price, review]
-product_list.append(item)
+        print(product, price, review)
+        item = [product, price, review]
+        product_list.append(item)
 
 driver.quit()
 
